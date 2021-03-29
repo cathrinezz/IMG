@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>MainActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>com.example.myapplication
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.MotionEvent
+import android.view.View
+import com.example.myapplication.R
+import kotlinx.android.synthetic.main.activity_main.*
+
+<span class="s0">class </span>MainActivity : AppCompatActivity() , View.OnTouchListener {
+    override <span class="s0">fun </span>onCreate(savedInstanceState: Bundle?) {
+        <span class="s0">super</span>.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        img.setOnTouchListener(<span class="s0">this</span>)
+    }
+
+    override <span class="s0">fun </span>onTouch(v: View?, event: MotionEvent?): Boolean {
+        <span class="s0">if </span>(event?.action == MotionEvent.ACTION_DOWN) {
+            img.setImageResource(R.drawable.pokemon)
+        } <span class="s0">else if </span>(event?.action == MotionEvent.ACTION_UP) {
+            img.setImageResource(R.drawable.ohtilly)
+        } <span class="s0">else if </span>(event?.action == MotionEvent.ACTION_MOVE) {
+            img.setImageResource(R.drawable.three)
+
+        }
+        <span class="s0">return true</span>
+    }
+}
+</pre>
+</body>
+</html>
